@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Axios from "axios";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate, Link } from "react-router-dom"; 
+import api from 'libs/api';
 const GoogleIcon = require("../assets/images/Google.png");
 const SignUpRight = require("../assets/images/Image1.jpeg");
 
@@ -20,7 +20,7 @@ export default function SignUp() {
   const register = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
     try {
-      await Axios.post("/api/auth/signup", regInputs, { withCredentials: true });
+      await api.post("/api/auth/signup", regInputs);
       navigate("/")
     } catch (err: any) {
       alert(err.response.data);
@@ -89,9 +89,9 @@ export default function SignUp() {
             </button>
             <div className="text-center">
               Already have an account? {""}
-              <a href="/business/app/login" className="text-primary hover:font-bold">
+              <Link to="/business/app/login" className="text-primary hover:font-bold">
                 Sign In
-              </a>
+              </Link>
             </div>
           </div>
 

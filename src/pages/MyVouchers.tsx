@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import { AuthContext } from "context/authContext";
 import { useQuery } from "react-query";
-import Axios from 'axios';
 import Voucher from 'components/business-portal/Voucher';
 import NewVoucherComponent from 'components/business-portal/NewVoucher';
 import { VoucherTypes } from 'utils/types';
 import { MdOutlineSwipe } from "react-icons/md";
-import { RiCoupon2Line } from "react-icons/ri"
+import { RiCoupon2Line } from "react-icons/ri";
+import api from 'libs/api';
 
 const MyVouchers = () => {
   const { data, status } = useQuery(['vouchers'], async () => {
-    const res = await Axios.create({ baseURL: "/api", withCredentials: true }).get("/vouchers")
+    const res = await api.get("/vouchers")
     return res.data;
   })
 

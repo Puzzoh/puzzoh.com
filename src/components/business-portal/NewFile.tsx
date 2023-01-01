@@ -3,11 +3,11 @@ import { Listbox, Transition } from '@headlessui/react';
 import { HiCheck, HiChevronUpDown } from "react-icons/hi2";
 import { AuthContext } from "context/authContext";
 import { useMutation, useQueryClient } from "react-query";
-import Axios from 'axios';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FileTypes } from 'utils/types';
 import DocViewer, { PDFRenderer, DocViewerRenderers } from "react-doc-viewer";
+import api from 'libs/api';
 
 const NewFile = () => {
   const { currentVendor } = useContext(AuthContext);
@@ -15,7 +15,7 @@ const NewFile = () => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation((newFile: FileTypes) => {
-    return Axios.create({ baseURL: "/api", withCredentials: true }).post("/file", newFile, {
+    return api.post("/file", newFile, {
       headers: {
         "Content-Type": "multipart/form-data",
       },

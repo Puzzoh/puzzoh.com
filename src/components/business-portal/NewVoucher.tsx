@@ -3,11 +3,11 @@ import { Listbox, Transition } from '@headlessui/react';
 import { HiCheck, HiChevronUpDown } from "react-icons/hi2";
 import { AuthContext } from "context/authContext";
 import { useMutation, useQueryClient } from "react-query";
-import Axios from 'axios';
 import moment from 'moment';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { VoucherTypes } from 'utils/types';
+import api from 'libs/api';
 
 const NewVoucher = () => {
   const { currentVendor } = useContext(AuthContext);
@@ -15,7 +15,7 @@ const NewVoucher = () => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation((newVoucher: VoucherTypes) => {
-    return Axios.create({ baseURL: "/api", withCredentials: true }).post("/voucher", newVoucher, {
+    return api.post("/voucher", newVoucher, {
       headers: {
         "Content-Type": "multipart/form-data",
       },

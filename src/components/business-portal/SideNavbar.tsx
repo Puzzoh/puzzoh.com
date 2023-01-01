@@ -12,7 +12,7 @@ import {
   MdOutlineDocumentScanner
 } from "react-icons/md";
 import { RiCustomerServiceLine } from "react-icons/ri";
-import Axios from 'axios';
+import api from 'libs/api';
 import { AuthContext } from "context/authContext";
 
 const SideNavbar = () => {
@@ -23,7 +23,7 @@ const SideNavbar = () => {
   const handleLogout = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
     try {
-      await Axios.get('/api/auth/logout', { withCredentials: true });
+      await api.get('/auth/logout');
       await localStorage.removeItem('vendor');
       navigate('/business/app/login')
     } catch (err: any) {
@@ -47,7 +47,7 @@ const SideNavbar = () => {
               Welcome, {currentVendor.vendorName}
             </h1>
             <div className="my-4 border-b border-gray-100 pb-4" >
-              <Link to="/">
+              <Link to="/business/app">
                 <div className="flex mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto">
                   <MdOutlineSpaceDashboard className="text-2xl text-gray-600 group-hover:text-white" />
                   <h3 className="text-base text-gray-800 group-hover:text-white font-semibold">
@@ -56,7 +56,7 @@ const SideNavbar = () => {
                 </div>
               </Link>
 
-              <Link to="/vouchers">
+              <Link to="/business/app/vouchers">
                 <div className="flex mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto" >
                   <MdOutlineExtension className="text-2xl text-gray-600 group-hover:text-white " />
                   <h3 className="text-base text-gray-800 group-hover:text-white font-semibold ">
@@ -65,7 +65,7 @@ const SideNavbar = () => {
                 </div>
               </Link>
 
-              <Link to="/customers">
+              <Link to="/business/app/customers">
                 <div className="flex mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto">
                   <MdOutlinePeopleAlt className="text-2xl text-gray-600 group-hover:text-white " />
                   <h3 className="text-base text-gray-800 group-hover:text-white font-semibold ">
@@ -74,7 +74,7 @@ const SideNavbar = () => {
                 </div>
               </Link>
 
-              <Link to="/files">
+              <Link to="/business/app/files">
                 <div className="flex mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto">
                   <MdOutlineDocumentScanner className="text-2xl text-gray-600 group-hover:text-white" />
                   <h3 className="text-base text-gray-800 group-hover:text-white font-semibold">
@@ -83,7 +83,7 @@ const SideNavbar = () => {
                 </div>
               </Link>
 
-              <Link to="/settings">
+              <Link to="/business/app/settings">
                 <div className="flex mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto">
                   <MdOutlineSettings className="text-2xl text-gray-600 group-hover:text-white" />
                   <h3 className="text-base text-gray-800 group-hover:text-white font-semibold">
@@ -94,7 +94,7 @@ const SideNavbar = () => {
             </div>
 
             <div className="my-4 border-b border-gray-100 pb-4">
-              <Link to="/support">
+              <Link to="/business/app/support">
                 <div className="flex mb-2 justify-start items-center gap-4 pl-5 hover:bg-gray-900 p-2 rounded-md group cursor-pointer hover:shadow-lg m-auto">
                   <RiCustomerServiceLine className="text-2xl text-gray-600 group-hover:text-white" />
                   <h3 className="text-base text-gray-800 group-hover:text-white font-semibold">

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from "context/authContext";
 import { useMutation, useQueryClient } from "react-query";
-import Axios from 'axios';
+import api from 'libs/api';
 
 const Settings = () => {
 const { currentVendor } = useContext(AuthContext);
@@ -20,7 +20,7 @@ const { currentVendor } = useContext(AuthContext);
   const queryClient = useQueryClient();
 
   const mutation = useMutation((newInfo: any) => {
-    return Axios.create({ baseURL: "/api", withCredentials: true }).put("/vendor/updateInfo", newInfo );
+    return api.put("/vendor/updateInfo", newInfo );
   },
   {
     onSuccess: () => {

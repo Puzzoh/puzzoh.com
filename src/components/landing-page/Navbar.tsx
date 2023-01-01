@@ -1,4 +1,5 @@
 import React, { MouseEventHandler, MutableRefObject } from "react";
+import { Link } from "react-router-dom";
 
 interface Props {
   innerRef?: MutableRefObject<HTMLInputElement>;
@@ -75,11 +76,11 @@ const Navbar: React.FC<Props> = ({
             </li>
           </ul>
         </div>
-        <a href="#">
+        <Link to="#">
           <div className="btn btn-ghost normal-case text-xl font-LexendMega">
             Puzzoh
           </div>
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0 gap-1">
@@ -118,13 +119,13 @@ const Navbar: React.FC<Props> = ({
         </ul>
       </div>
       <div className="navbar-end">
-        <a href="/business">
+        <Link to="/business">
           <div
             className="btn font-LexendMega text-white hover:bg-white hover:text-black"
           >
             Business portal
           </div>
-        </a>
+        </Link>
       </div>
     </div>
   );

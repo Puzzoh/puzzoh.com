@@ -1,4 +1,5 @@
 import React, { MouseEventHandler, MutableRefObject } from "react";
+import { Link } from "react-router-dom";
 const OverviewImg = require(`assets/images/Collage9.jpeg`);
 
 interface Props {
@@ -22,11 +23,11 @@ const BusinessOverview: React.FC<Props> = ({ reference }) => {
               An efficient and cost-friendly way to reach new customers and
               manage reservation
             </div>
-            <a href="/business/app">
+            <Link to="/business/app">
               <button className="btn btn-md border-none bg-white hover:bg-black text-black hover:text-white rounded-3xl uppecase text-sm px-5 mt-10 mb-4 lg:mb-0">
                 Sign in to the business portal
               </button>
-            </a>
+            </Link>
           </div>
           <div className="order-2 md:my-2">
             <div className="z-10 w-full h-full rounded-xl shadow-lg p-8 bg-black max-w-sm md:max-w-none mt-4 md:mt-0">
@@ -126,17 +127,17 @@ const BusinessOverview: React.FC<Props> = ({ reference }) => {
                 />
                 <div className="text-gray-400 text-sm ">
                   By clicking &apos;Submit&apos; you agree to our {""}
-                  <a href="/business/policy">
+                  <Link to="/business/policy">
                     <span className="underline hover:text-white">
                       General Terms and Conditions
                     </span>
-                  </a>
+                  </Link>
                   {""} and acknowledge you have read the {""}
-                  <a href="/business/policy">
+                  <Link to="/business/policy">
                     <span className="underline hover:text-white">
                       Privacy Policy.
                     </span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="inline-block self-end font-bold mt-10">
                   <button

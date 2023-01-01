@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { VoucherTypes } from 'utils/types'
 import DropdownMenu from 'components/business-portal/VoucherDropdownMenu';
-import Axios from 'axios';
 import { useQuery } from "react-query";
 import moment from 'moment';
+import api from 'libs/api';
 
 const Voucher = ({ id, title, description, category, priceBefore, priceAfter, maxRedeem, expireDate }: VoucherTypes) => {
   const { data, status } = useQuery(['voucher_imgs'], async () => {
-    const res = await Axios.create({ baseURL: "/api", withCredentials: true }).get("/voucher-imgs")
+    const res = await api.get("/voucher-imgs")
     return res.data;
   })
 

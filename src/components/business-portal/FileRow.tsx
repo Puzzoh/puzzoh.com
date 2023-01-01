@@ -1,16 +1,16 @@
 import React from 'react';
 import { FileTypes } from 'utils/types';
 import { useMutation, useQueryClient } from "react-query";
-import Axios from 'axios';
 import moment from 'moment';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import api from 'libs/api';
 
 const FileRow = ({ id, title, description, file, createDate }: FileTypes) => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation((someId: number | undefined) => {
-    return Axios.create({ baseURL: "/api", withCredentials: true }).delete(`/file/${someId}`, {
+    return api.delete(`/file/${someId}`, {
       data: {
         filename: file
       }

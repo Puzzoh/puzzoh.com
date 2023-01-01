@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ReactPhotoCollage } from "react-photo-collage";
-import { FaAppStore, FaGooglePlay } from "react-icons/fa"
+import { FaAppStore, FaGooglePlay } from "react-icons/fa";
 
 const setting = {
   width: "600px",
@@ -50,13 +51,13 @@ const Hero: React.FC = () => {
             </button>
             <p className="text-base text-center lg:text-left mt-0 lg:mt-10">
               Own a restaurant/place?{" "}
-              <a href="/business">
+              <Link to="/business">
                 <button>
                   <span className="underline font-bold hover:text-primary">
                     Partner with Puzzoh!
                   </span>
                 </button>
-              </a>
+              </Link>
             </p>
           </div>
         </div>

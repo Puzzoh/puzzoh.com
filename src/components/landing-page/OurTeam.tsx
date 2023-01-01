@@ -34,13 +34,11 @@ const OurTeam: React.FC<Props> = ({ innerRef }) => {
               <a
                 href="https://www.linkedin.com/in/huige-holly-ouyang"
               >
-                <a>
                   <FaLinkedinIn />
-                </a>
               </a>
-                <a>
+              <a>
                   <FaInstagram />
-                </a>
+              </a>
               <a href="mailto:houyang@villanova.edu">
                 <a>
                   <FaEnvelope />

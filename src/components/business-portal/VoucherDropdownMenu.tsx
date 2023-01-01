@@ -3,13 +3,13 @@ import { Fragment, useEffect, useRef, useState } from 'react'
 import { HiChevronUpDown } from "react-icons/hi2";
 import { MdOutlineMoreHoriz } from "react-icons/md";
 import { useMutation, useQueryClient } from "react-query";
-import Axios from 'axios';
+import api from 'libs/api';
 
 export default function VoucherDropdownMenu({ voucherId, voucherImgs }: any) {
   const queryClient = useQueryClient();
 
   const mutation = useMutation((someId) => {
-    return Axios.create({ baseURL: "/api", withCredentials: true }).delete(`/voucher/${someId}`, {
+    return api.delete(`/voucher/${someId}`, {
       data: voucherImgs
     })
   },

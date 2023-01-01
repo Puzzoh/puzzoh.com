@@ -1,10 +1,10 @@
 import React from 'react';
 import { AuthContext } from "context/authContext";
 import { useQuery } from "react-query";
-import Axios from 'axios';
 import FileRow from 'components/business-portal/FileRow';
 import NewFile from 'components/business-portal/NewFile';
 import { FileTypes } from 'utils/types';
+import api from 'libs/api';
 
 const AddFileModal = () => {
   return (
@@ -27,7 +27,7 @@ const AddFileModal = () => {
 
 const Files = () => {
   const { data, status } = useQuery(['files'], async () => {
-    const res = await Axios.create({ baseURL: "/api", withCredentials: true }).get("/files")
+    const res = await api.get("/files")
     return res.data;
   })
 

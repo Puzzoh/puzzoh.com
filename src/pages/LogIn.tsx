@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "context/authContext";
-import Axios from "axios";
 const GoogleIcon = require("assets/images/Google.png");
 const LoginRight = require("assets/images/Image1.jpeg");
 
@@ -93,9 +93,9 @@ export default function LogIn() {
             </button>
             <div className="text-center">
               Don&apos;t have an account? {""}
-              <a href="/business/app/register" className="text-primary hover:font-bold">
+              <Link to="/business/app/register" className="text-primary hover:font-bold">
                 Sign Up
-              </a>
+              </Link>
             </div>
           </div>
 

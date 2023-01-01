@@ -1,4 +1,4 @@
-import Axios from "axios";
+import api from 'libs/api';
 import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
@@ -9,9 +9,7 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = async (inputs) => {
-    const res = await Axios.post("/api/auth/login", inputs, {
-      withCredentials: true,
-    });
+    const res = await api.post("auth/login", inputs)
 
     setCurrentVendor(res.data);
   };
