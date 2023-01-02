@@ -102,11 +102,11 @@ const StickyNavbar: React.FC<Props> = ({
         </ul>
       </div>
         <div className="navbar-end">
-          <a href="/business/app">
+          <Link to="/business/app">
             <div className="btn font-LexendMega text-white hover:bg-white hover:text-black">
                 Sign In
             </div>
-          </a>
+          </Link>
         </div>
     </div>
   );
