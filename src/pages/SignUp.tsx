@@ -20,7 +20,7 @@ export default function SignUp() {
   const register = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
     try {
-      await api.post("/api/auth/signup", regInputs);
+      await api.post("/auth/signup", regInputs);
       navigate("/")
     } catch (err: any) {
       alert(err.response.data);
