@@ -2,6 +2,7 @@ import { MutableRefObject, useRef } from "react";
 import Navbar from "components/landing-page/Navbar";
 import Hero from "components/landing-page/Hero";
 import Features from "components/landing-page/Features";
+import Highlights from "components/landing-page/Highlights";
 import OurTeam from "components/landing-page/OurTeam";
 import Timeline from "components/landing-page/Timeline";
 import Contact from "components/landing-page/Contact";
@@ -30,6 +31,7 @@ const Home = () => {
         clickContact={() => smoothScrollToDiv(elContact)}
       />
       <Hero />
+      <Highlights innerRef={elHighlights} />
       <Features innerRef={elFeatures} />
       <OurTeam innerRef={elOurTeam} />
       <Timeline />
