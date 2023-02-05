@@ -60,22 +60,22 @@ const Highlights: React.FC<Props> = ({ innerRef }) => {
                   />{" "}
                   <h3 className="text-2xl leading-6 font-bold font-LexendMega mt-2">
                     {" "}
-                    Get Real Interaction
+                    Goal-oriented
                   </h3>
                   <div className="flex flex-row">
                     <BsCaretRight className="text-sm mt-3" />
                     <p className="text-sm mt-2">
                       {" "}
-                      Skip the small talk, get straight to the experience and
-                      avoid ghosting.
+                      Choose “Share a voucher”, “Make friends”, or “Dating
+                      experience”.
                     </p>
                   </div>
                   <div className="flex flex-row">
                     <BsCaretRight className="text-sm mt-3" />
                     <p className="text-sm mt-2 ">
                       {" "}
-                      One has 24 hours to redeem half of the voucher with a
-                      discount.
+                      Match with someone who chooses the same voucher and with
+                      overlapped preferences.
                     </p>
                   </div>
                 </div>
