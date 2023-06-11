@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom"; 
-import api from 'libs/api';
+import { useNavigate, Link } from "react-router-dom";
+import api from "libs/api";
 const GoogleIcon = require("../assets/images/Google.png");
 const SignUpRight = require("../assets/images/Image1.jpeg");
 
@@ -21,7 +21,7 @@ export default function SignUp() {
     e.preventDefault();
     try {
       await api.post("/auth/signup", regInputs);
-      navigate("/")
+      navigate("/");
     } catch (err: any) {
       alert(err.response.data);
     }
@@ -89,7 +89,10 @@ export default function SignUp() {
             </button>
             <div className="text-center">
               Already have an account? {""}
-              <Link to="/business/app/login" className="text-primary hover:font-bold">
+              <Link
+                to="/business/app/login"
+                className="text-primary hover:font-bold"
+              >
                 Sign In
               </Link>
             </div>

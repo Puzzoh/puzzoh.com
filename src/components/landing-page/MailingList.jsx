@@ -32,10 +32,7 @@ const MailingList = ({ innerRef }) => {
             placeholder="Your email"
             className="input input-bordered bg-white text-black w-full max-w-xs "
           />
-          <button
-            onClick={onSubmit}
-            className="btn btn-md text-white  w-30"
-          >
+          <button onClick={onSubmit} className="btn btn-md text-white  w-30">
             Subscribe
           </button>
         </div>
@@ -82,12 +79,12 @@ const MailingList = ({ innerRef }) => {
           </span>
 
           <div className="flex my-2 md:space-x-2 lg:justify-center w-full">
-              <button className="btn rounded-3xl bg-white hover:bg-white border-none">
-                <IoLogoInstagram className="text-black hover:text-primary text-3xl" />
-              </button>
-              <button className="btn rounded-3xl bg-white hover:bg-white border-none">
-                <IoLogoLinkedin className="text-black hover:text-primary text-3xl " />
-              </button>
+            <button className="btn rounded-3xl bg-white hover:bg-white border-none">
+              <IoLogoInstagram className="text-black hover:text-primary text-3xl" />
+            </button>
+            <button className="btn rounded-3xl bg-white hover:bg-white border-none">
+              <IoLogoLinkedin className="text-black hover:text-primary text-3xl " />
+            </button>
             <a href="https://github.com/Puzzoh">
               <button className="btn rounded-3xl bg-white hover:bg-white border-none">
                 <IoLogoGithub className="text-black hover:text-primary text-3xl" />

@@ -31,13 +31,11 @@ const OurTeam: React.FC<Props> = ({ innerRef }) => {
             <h3 className="font-LexendMega">Holly Ouyang</h3>
             <p>Product Manager</p>
             <div className="icons">
-              <a
-                href="https://www.linkedin.com/in/huige-holly-ouyang"
-              >
-                  <FaLinkedinIn />
+              <a href="https://www.linkedin.com/in/huige-holly-ouyang">
+                <FaLinkedinIn />
               </a>
               <a>
-                  <FaInstagram />
+                <FaInstagram />
               </a>
               <a href="mailto:houyang@villanova.edu">
                 <a>
@@ -56,13 +54,13 @@ const OurTeam: React.FC<Props> = ({ innerRef }) => {
             <p>Developer</p>
             <div className="icons">
               <a href="https://www.linkedin.com/in/minhphung1">
-                  <FaLinkedinIn />
+                <FaLinkedinIn />
               </a>
               <a href="https://github.com/mphung1">
-                  <FaGithub />
+                <FaGithub />
               </a>
               <a href="mailto:mphung1@villanova.edu">
-                  <FaEnvelope />
+                <FaEnvelope />
               </a>
             </div>
           </div>

@@ -1,12 +1,12 @@
-import React, { useRef, useEffect } from 'react';
-import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+import React, { useRef, useEffect } from "react";
+import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
 import { AuthContext } from "context/authContext";
 
 const RouterChat = () => {
   const tawkMessengerRef = useRef<any>();
 
   const onLoad = () => {
-      console.log('Subscribed!');
+    console.log("Subscribed!");
   };
 
   return (
@@ -18,7 +18,7 @@ const RouterChat = () => {
         onLoad={onLoad}
       />
     </div>
-  )
-}
+  );
+};
 
 export default RouterChat;

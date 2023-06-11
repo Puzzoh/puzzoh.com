@@ -1,27 +1,29 @@
-import { Menu, Transition } from '@headlessui/react'
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Menu, Transition } from "@headlessui/react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { HiChevronUpDown } from "react-icons/hi2";
 import { MdOutlineMoreHoriz } from "react-icons/md";
 import { useMutation, useQueryClient } from "react-query";
-import api from 'libs/api';
+import api from "libs/api";
 
 export default function VoucherDropdownMenu({ voucherId, voucherImgs }: any) {
   const queryClient = useQueryClient();
 
-  const mutation = useMutation((someId) => {
-    return api.delete(`/voucher/${someId}`, {
-      data: voucherImgs
-    })
-  },
-  {
-    onSuccess: () => {
-      queryClient.invalidateQueries(["vouchers"])
+  const mutation = useMutation(
+    (someId) => {
+      return api.delete(`/voucher/${someId}`, {
+        data: voucherImgs,
+      });
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["vouchers"]);
+      },
     }
-  });
+  );
 
   const deleteVoucher = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
-    mutation.mutate(voucherId)
+    mutation.mutate(voucherId);
   };
 
   return (
@@ -47,7 +49,7 @@ export default function VoucherDropdownMenu({ voucherId, voucherImgs }: any) {
                 {({ active }) => (
                   <button
                     className={`${
-                      active ? 'bg-primary text-white' : 'text-black'
+                      active ? "bg-primary text-white" : "text-black"
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                   >
                     {active ? (
@@ -71,7 +73,7 @@ export default function VoucherDropdownMenu({ voucherId, voucherImgs }: any) {
                 {({ active }) => (
                   <button
                     className={`${
-                      active ? 'bg-primary text-white' : 'text-black'
+                      active ? "bg-primary text-white" : "text-black"
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                   >
                     {active ? (
@@ -87,14 +89,14 @@ export default function VoucherDropdownMenu({ voucherId, voucherImgs }: any) {
                     )}
                     Archive
                   </button>
-              )}
-            </Menu.Item>
+                )}
+              </Menu.Item>
             </div>
           </Menu.Items>
         </Transition>
       </Menu>
     </div>
-  )
+  );
 }
 
 function EditInactiveIcon(props: any) {
@@ -112,7 +114,7 @@ function EditInactiveIcon(props: any) {
         strokeWidth="2"
       />
     </svg>
-  )
+  );
 }
 
 function EditActiveIcon(props: any) {
@@ -130,7 +132,7 @@ function EditActiveIcon(props: any) {
         strokeWidth="2"
       />
     </svg>
-  )
+  );
 }
 
 function ArchiveInactiveIcon(props: any) {
@@ -161,7 +163,7 @@ function ArchiveInactiveIcon(props: any) {
       />
       <path d="M8 12H12" stroke="black" strokeWidth="2" />
     </svg>
-  )
+  );
 }
 
 function ArchiveActiveIcon(props: any) {
@@ -192,7 +194,7 @@ function ArchiveActiveIcon(props: any) {
       />
       <path d="M8 12H12" stroke="white" strokeWidth="2" />
     </svg>
-  )
+  );
 }
 
 function DeleteInactiveIcon(props: any) {
@@ -215,7 +217,7 @@ function DeleteInactiveIcon(props: any) {
       <path d="M3 6H17" stroke="black" strokeWidth="2" />
       <path d="M8 6V4H12V6" stroke="black" strokeWidth="2" />
     </svg>
-  )
+  );
 }
 
 function DeleteActiveIcon(props: any) {
@@ -238,5 +240,5 @@ function DeleteActiveIcon(props: any) {
       <path d="M3 6H17" stroke="white" strokeWidth="2" />
       <path d="M8 6V4H12V6" stroke="white" strokeWidth="2" />
     </svg>
-  )
+  );
 }

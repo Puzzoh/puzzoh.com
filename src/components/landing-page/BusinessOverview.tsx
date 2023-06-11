@@ -12,7 +12,10 @@ const BusinessOverview: React.FC<Props> = ({ reference }) => {
     <div ref={reference}>
       <div
         className="hero min-h-screen"
-        style={{ backgroundImage: 'url(' + require('assets/images/Collage9.jpeg') + ')'}}
+        style={{
+          backgroundImage:
+            "url(" + require("assets/images/Collage9.jpeg") + ")",
+        }}
       >
         <div className="grid lg:grid-cols-2 items-center justify-items-center gap-5">
           <div className="order-1 flex flex-col justify-center items-center mt-8">

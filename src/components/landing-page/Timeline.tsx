@@ -5,7 +5,11 @@ const Timeline: React.FC = () => {
     <div className="relative container mx-auto px-6 flex flex-col space-y-8">
       <div className="absolute z-0 w-2 h-full bg-white shadow-md inset-0 left-17 md:mx-auto md:right-0 md:left-0"></div>
       <div className="relative z-10">
-        <img src={require(`assets/images/Webpage.jpg`)} alt="webpage" className="timeline-img" />
+        <img
+          src={require(`assets/images/Webpage.jpg`)}
+          alt="webpage"
+          className="timeline-img"
+        />
         <div className="timeline-container">
           <div className="timeline-pointer bg-black" aria-hidden="true"></div>
           <div className="bg-white p-6 rounded-md shadow-md">

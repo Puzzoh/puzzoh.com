@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-$primary-color:hsl(23, 100%, 65%);
-$secondary-color:hsl(72, 68%, 64%);
+$primary-color: hsl(23, 100%, 65%);
+$secondary-color: hsl(72, 68%, 64%);
 
 @font-face {
   font-family: "LexendMega";
-  src: url('../assets/fonts/LexendMega.ttf')
+  src: url("../assets/fonts/LexendMega.ttf");
 }
 
 @font-face {
   font-family: "LexendDeca";
-  src: url('../assets/fonts/LexendDeca.ttf')
+  src: url("../assets/fonts/LexendDeca.ttf");
 }
 
 * {
@@ -49,28 +49,36 @@ h2 {
 
 @layer components {
   .timeline-img {
-      @apply h-24 w-24 object-cover rounded-full shadow-md border-4 border-white xs:absolute md:mx-auto md:left-0 md:right-0;
+    @apply h-24 w-24 object-cover rounded-full shadow-md border-4 border-white xs:absolute md:mx-auto md:left-0 md:right-0;
   }
   .timeline-container {
-      @apply relative pt-2 xs:pl-28 xs:pt-0 md:w-1/2 md:ml-auto md:pl-16;
+    @apply relative pt-2 xs:pl-28 xs:pt-0 md:w-1/2 md:ml-auto md:pl-16;
   }
   .timeline-container-left {
-      @apply md:ml-0 md:mr-auto md:pl-0 md:pr-16;
+    @apply md:ml-0 md:mr-auto md:pl-0 md:pr-16;
   }
   .timeline-pointer {
-      @apply absolute inset-0 left-10 h-4 w-4 transform rotate-45 bg-white xs:top-11 xs:left-24 md:left-14;
+    @apply absolute inset-0 left-10 h-4 w-4 transform rotate-45 bg-white xs:top-11 xs:left-24 md:left-14;
   }
   .timeline-pointer-left {
-      @apply md:left-auto md:right-14;
+    @apply md:left-auto md:right-14;
   }
 
   .blue__gradient {
-    background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(188, 165, 255, 0) 0%,
+      #214d76 100%
+    );
     filter: blur(123px);
   }
 
   .pink__gradient {
-    background: linear-gradient(90deg, hsl(23, 100%, 65%) 0%, hsl(72, 68%, 64%) 100%);
+    background: linear-gradient(
+      90deg,
+      hsl(23, 100%, 65%) 0%,
+      hsl(72, 68%, 64%) 100%
+    );
     filter: blur(900px);
   }
 
@@ -80,7 +88,7 @@ h2 {
   }
 
   .column {
-    @apply px-0 py-2 w-full lg:flex-grow-0 lg:flex-shrink-0 lg:py-0 lg:px-4
+    @apply px-0 py-2 w-full lg:flex-grow-0 lg:flex-shrink-0 lg:py-0 lg:px-4;
   }
   .card {
     @apply bg-white cursor-pointer px-4 py-12 hover:text-white lg:px-4 lg:py-20;
@@ -136,52 +144,52 @@ h2 {
     }
   }
 
-.accordion__section {
-  display: flex;
-  flex-direction: column;
-}
+  .accordion__section {
+    display: flex;
+    flex-direction: column;
+  }
 
-.accordion {
-  @apply bg-white;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  display: flex;
-  align-items: center;
-  border: none;
-  outline: none;
-  transition: background-color 0.6s ease;
-}
+  .accordion {
+    @apply bg-white;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    transition: background-color 0.6s ease;
+  }
 
-.accordion:hover {
-  @apply text-primary
-}
+  .accordion:hover {
+    @apply text-primary;
+  }
 
-.accordion__title {
-  @apply font-LexendMega;
-  font-weight: 600;
-  font-size: 14px;
-  text-align: left;
-}
+  .accordion__title {
+    @apply font-LexendMega;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+  }
 
-.accordion__icon {
-  margin-left: auto;
-  transition: transform 0.6s ease;
-}
+  .accordion__icon {
+    margin-left: auto;
+    transition: transform 0.6s ease;
+  }
 
-.rotate {
-  transform: rotate(90deg);
-}
+  .rotate {
+    transform: rotate(90deg);
+  }
 
-.accordion__content {
-  background-color: white;
-  overflow: auto;
-  transition: max-height 0.6s ease;
-}
+  .accordion__content {
+    background-color: white;
+    overflow: auto;
+    transition: max-height 0.6s ease;
+  }
 
-.accordion__text {
-  font-weight: 400;
-  font-size: 14px;
-  padding: 18px;
-}
+  .accordion__text {
+    font-weight: 400;
+    font-size: 14px;
+    padding: 18px;
+  }
 }

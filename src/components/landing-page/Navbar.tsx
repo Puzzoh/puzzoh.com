@@ -120,9 +120,7 @@ const Navbar: React.FC<Props> = ({
       </div>
       <div className="navbar-end">
         <Link to="/business">
-          <div
-            className="btn font-LexendMega text-white hover:bg-white hover:text-black"
-          >
+          <div className="btn font-LexendMega text-white hover:bg-white hover:text-black">
             Business portal
           </div>
         </Link>

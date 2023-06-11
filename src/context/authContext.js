@@ -1,4 +1,4 @@
-import api from 'libs/api';
+import api from "libs/api";
 import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
@@ -9,7 +9,7 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = async (inputs) => {
-    const res = await api.post("auth/login", inputs)
+    const res = await api.post("auth/login", inputs);
 
     setCurrentVendor(res.data);
   };

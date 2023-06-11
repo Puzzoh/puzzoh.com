@@ -5,8 +5,7 @@ const GoogleIcon = require("assets/images/Google.png");
 const LoginRight = require("assets/images/Image1.jpeg");
 
 export default function LogIn() {
-
-  const { login } = useContext(AuthContext)
+  const { login } = useContext(AuthContext);
 
   const [logInputs, setLogInputs] = useState({
     email: "",
@@ -26,9 +25,9 @@ export default function LogIn() {
     e.preventDefault();
     try {
       await login(logInputs);
-      window.location.href = "/business/app"
+      window.location.href = "/business/app";
     } catch (err: any) {
-      alert(err.response.data)
+      alert(err.response.data);
     }
   };
 
@@ -81,7 +80,7 @@ export default function LogIn() {
                   onChange={handleBoolChange}
                 />
                 <label htmlFor="rememberMeCheckbox" className="checkboxLabel">
-                 Remember me
+                  Remember me
                 </label>
               </div>
             </div>
@@ -93,7 +92,10 @@ export default function LogIn() {
             </button>
             <div className="text-center">
               Don&apos;t have an account? {""}
-              <Link to="/business/app/register" className="text-primary hover:font-bold">
+              <Link
+                to="/business/app/register"
+                className="text-primary hover:font-bold"
+              >
                 Sign Up
               </Link>
             </div>
@@ -112,7 +114,11 @@ export default function LogIn() {
         </form>
       </div>
       <div className="hidden md:bg-third md:flex md:justify-center">
-        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" className="w-full" alt="background" />
+        <img
+          src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+          className="w-full"
+          alt="background"
+        />
       </div>
     </div>
   );
